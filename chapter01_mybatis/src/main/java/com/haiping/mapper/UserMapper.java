@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @author tony
  * @version 1.0
- * @dat
+ * @date 2022-11-03 21:55
  */
 public interface UserMapper {
     /**
@@ -23,4 +23,11 @@ public interface UserMapper {
      * @return
      */
     List<User> findAll();
+
+    /**
+     * 根据条件查询
+     * @param user
+     * @return
+     */
+    List<User> findByCondition(User user);
 }

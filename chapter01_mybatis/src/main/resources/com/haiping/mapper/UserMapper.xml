@@ -5,9 +5,25 @@
 <mapper namespace="com.haiping.mapper.UserMapper">
     <cache size="2048"/>
     <select id="findPage" resultType="com.haiping.pojo.User">
-        select * from user limit #{param1},#{param2}
+        select *
+        from user limit #{param1},#{param2}
     </select>
     <select id="findAll" resultType="com.haiping.pojo.User">
+        select *
+        from user
+    </select>
+    <select id="findByCondition" parameterType="com.haiping.pojo.User" resultType="com.haiping.pojo.User">
         select * from user
+        <where>
+            <if test="username != null and username.length() != 0">
+                username like #{username}
+            </if>
+            <if test="sex != null and sex.length() != 0">
+                and sex = #{sex}
+            </if>
+            <if test="address != null and address.length() != 0">
+                and address = #{address}
+            </if>
+        </where>
     </select>
 </mapper>
