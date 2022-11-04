@@ -4,7 +4,96 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.haiping.mapper.UserMapper">
     <cache size="2048"/>
+    <update id="update" parameterType="com.haiping.pojo.User">
+        update user
+        set username = #{username},
+            sex=#{sex},
+            address=#{address}
+        where id = #{id}
+    </update>
+    <delete id="delete" parameterType="int">
+        delete
+        from user
+        where id = #{id}
+    </delete>
+    <delete id="deleteBatch" parameterType="int">
+        delete from user
+        <where>
+            <foreach open="id in(" close=")" separator="," collection="array" item="id">
+                #{id}
+            </foreach>
+        </where>
+
+    </delete>
+
     <select id="findPage" resultType="com.haiping.pojo.User">
-        select * from user limit #{param1},#{param2}
+        select *
+        from user limit #{param1},#{param2}
     </select>
+    <select id="findAll" resultType="com.haiping.pojo.User">
+        select *
+        from user
+    </select>
+    <select id="findByCondition" parameterType="com.haiping.pojo.User" resultType="com.haiping.pojo.User">
+        select * from user
+        <where>
+            <if test="username != null and username.length() != 0">
+                <bind name="likeName" value="'%'+username+'%'"/>
+                username like #{likeName}
+            </if>
+            <if test="sex != null and sex.length() != 0">
+                and sex = #{sex}
+            </if>
+            <if test="address != null and address.length() != 0">
+                and address = #{address}
+            </if>
+        </where>
+    </select>
+    <select id="findById" parameterType="int" resultType="com.haiping.pojo.User">
+        select *
+        from user
+        where id = #{userId}
+    </select>
+
+    <select id="findByUsernameLike" parameterType="string" resultType="com.haiping.pojo.User">
+        <bind name="likeName" value="'%'+username+'%'"/>
+        select * from user where username like #{likeName}
+    </select>
+    <select id="findPage1" resultType="com.haiping.pojo.User">
+        select *
+        from user limit #{startIndex},#{pageSize}
+    </select>
+    <select id="findPage2" resultType="User" parameterType="com.haiping.PageQuery">
+        select *
+        from user limit #{startIndex},#{pageSize}
+    </select>
+    <select id="findPage3" resultType="com.haiping.pojo.User" parameterType="map">
+        select *
+        from user limit #{startIndex},#{pageSize}
+    </select>
+    <select id="findCount" resultType="int">
+        select count(id)
+        from user
+    </select>
+
+    <insert id="addUser" parameterType="com.haiping.pojo.User">
+        insert into user(username, sex, address)
+        values (#{username}, #{sex}, #{address})
+    </insert>
+
+    <insert id="add2" parameterType="com.haiping.pojo.User">
+        <!-- keyProperty:主键属性名 keyColumn:主键列名  resultType:主键类型  order:执行时机 -->
+        <selectKey keyProperty="id" keyColumn="id" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID();
+        </selectKey>
+        insert into user(username, sex, address)
+        values (#{username}, #{sex}, #{address})
+    </insert>
+    <insert id="insertBatch" parameterType="com.haiping.pojo.User">
+        insert into user(username,sex,address) values
+        <foreach collection="list" item="user" separator=",">
+            (#{user.username},#{user.sex},#{user.address})
+        </foreach>
+    </insert>
+
 </mapper>
