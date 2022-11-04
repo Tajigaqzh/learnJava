@@ -6,11 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="chapter03_springmvc" />
+        <module name="chapter07_mybatisplus" />
+        <module name="chapter08_springsecurity" />
         <module name="chapter01_mybatis" />
+        <module name="chapter02_spring" />
+        <module name="chapter06_springboot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="chapter01_mybatis" target="8" />
+      <module name="chapter02_spring" target="1.8" />
+      <module name="chapter03_springmvc" target="1.8" />
+      <module name="chapter06_springboot" target="1.8" />
+      <module name="chapter07_mybatisplus" target="1.8" />
+      <module name="chapter08_springsecurity" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

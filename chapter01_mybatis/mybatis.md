@@ -1,5 +1,7 @@
 # mybatis
 MyBatis是一个半自动的ORM框架，其本质是对JDBC的封装。使用 MyBatis不需要写JDBC代码，但需要程序员编写SQL语句
+## 文档
+https://mybatis.net.cn/
 ## mybatis工作流程与使用的设计模式
 
 1.创建SqlSessionFactoryBuilder对象
@@ -278,7 +280,6 @@ SqlSession 调用 clearCache() 无法将数据存到二级缓存中。
 + 在映射文件添加 `<cache />` 标签，该映射文件下的所有方法都支持二级缓存。(如果查询到的集合中对象过多，二级缓存只能缓存1024个对
   象引用。可以通过 <cache /> 标签的size属性修改该数量。)
 
-### MyBatis关联查询
 
 ### 分页查询
 顺序传参
@@ -380,4 +381,8 @@ public class UserMapperTest{
 }
 ```
 
+
+
+
+### MyBatis关联查询
 
