@@ -112,7 +112,7 @@ parameterType="string" resultType="com.haiping.pojo.User">
 
 标签的作用的自定义映射关系。
 
-####`<sql>`标签
+#### `<sql>`标签
 
 标签用来定义可重用的Sql片段，通过 include标签 引入该片段。如：Sql语句的查询字段起与POJO属性相同的别名，该Sql片段就可以重用。
 
