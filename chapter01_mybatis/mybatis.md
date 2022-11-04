@@ -281,7 +281,7 @@ SqlSession 调用 clearCache() 无法将数据存到二级缓存中。
 ### MyBatis关联查询
 
 ### 分页查询
-#### 顺序传参
+顺序传参
 
 Sql中的参数使用arg0，arg1...或param1，param2...表示参数的顺
 序。此方法可读性较低，在开发中不建议使用。
@@ -323,6 +323,7 @@ public class PageQuery {
 ```
 
 Map传参
+
 如果不想自定义POJO，可以使用Map作为传递参数的载体，在SQL
 语句中绑定参数时使用Map的Key作为参数名即可。此方法推荐使
 用。
