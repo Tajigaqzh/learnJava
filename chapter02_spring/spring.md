@@ -6,7 +6,7 @@ Spring是一个开源框架，为简化企业级开发而生。它以IOC（控�
 
 ## Spring构成
 
-![Alt](.\src\main\resources\static\images\spring.png)
+![Alt](src/main/resources/static/images/spring.png)
 + Core Container：Spring核心模块，任何功能的使用都离不开该模块，是其他模块建立的基础。
 + Data Access/Integration：该模块提供了数据持久化的相应功能。
 + Web：该模块提供了web开发的相应功能。
