@@ -108,10 +108,12 @@ parameterType="string" resultType="com.haiping.pojo.User">
 ```
 
 ### 映射文件标签
-#### resultMap
+#### `<resultMap>`
 标签的作用的自定义映射关系。
-####sql
+
+####`<sql>`
 标签用来定义可重用的Sql片段，通过 include标签 引入该片段。如：Sql语句的查询字段起与POJO属性相同的别名，该Sql片段就可以重用。
+
 #### 特殊符号
 |符号|实体|
 |:---:|:---:|
@@ -120,8 +122,10 @@ parameterType="string" resultType="com.haiping.pojo.User">
 |&|`&amp;`|
 |,|`&apos;`|
 |"|`&quot;`|
+
 ####动态SQL `<if>`
 标签内的Sql片段在满足条件后才会添加，用法为： `<if test="条件">` 
+
 #### 动态SQL `<where>`
 ```xml
 <select id="findByCondition" resultType="com.haiping.user.User" parameterType="com.haiping.user.User">
