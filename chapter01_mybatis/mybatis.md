@@ -108,10 +108,12 @@ parameterType="string" resultType="com.haiping.pojo.User">
 ```
 
 ### 映射文件标签
-#### `<resultMap>`
+#### `<resultMap>`标签
+
 标签的作用的自定义映射关系。
 
-####`<sql>`
+####`<sql>`标签
+
 标签用来定义可重用的Sql片段，通过 include标签 引入该片段。如：Sql语句的查询字段起与POJO属性相同的别名，该Sql片段就可以重用。
 
 #### 特殊符号
@@ -122,8 +124,10 @@ parameterType="string" resultType="com.haiping.pojo.User">
 |&|`&amp;`|
 |,|`&apos;`|
 |"|`&quot;`|
+--------------
 
 ####动态SQL `<if>`
+
 标签内的Sql片段在满足条件后才会添加，用法为： `<if test="条件">` 
 
 #### 动态SQL `<where>`
@@ -141,6 +145,7 @@ parameterType="string" resultType="com.haiping.pojo.User">
 </select>
 ```
 ####动态SQL `<set>`
+
 `<set>` 标签用在update语句中。借助 `<if>` ，可以只对有具体值的字段
 进行更新。 `<set>` 会自动添加set关键字，并去掉最后一个if语句中多
 余的逗号
@@ -161,6 +166,7 @@ parameterType="string" resultType="com.haiping.pojo.User">
 </update>
 ```
 ####动态SQL `<choose>、<when>、<otherwise>`
+
 这些标签表示多条件分支，类似JAVA中的 switch...case 。 <choose> 类似switch ， <when> 类似 case ， <otherwise> 类似 default ，用法如下：
 ```xml
 <select id="findByCondition" resultType="com.haiping.user.User" parameterType="com.haiping.user.User">
@@ -268,7 +274,7 @@ SqlSession 调用 clearCache() 无法将数据存到二级缓存中。
 
 ####开启二级缓存
 + POJO类实现Serializable接口
-+ mybatis配置文件添加`<settings><setting name="cacheEnabled" value="true"/></settings>`由于cacheEnabled默认值是true，所以该设置可以省略。
++ mybatis配置文件添加```<settings><setting name="cacheEnabled" value="true"/></settings>```由于cacheEnabled默认值是true，所以该设置可以省略。
 + 在映射文件添加 `<cache />` 标签，该映射文件下的所有方法都支持二级缓存。(如果查询到的集合中对象过多，二级缓存只能缓存1024个对
   象引用。可以通过 <cache /> 标签的size属性修改该数量。)
 
