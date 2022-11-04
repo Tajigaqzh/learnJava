@@ -20,37 +20,6 @@ import java.util.List;
  * @date 2022-11-03 21:36
  */
 public class UserMapperTest {
-    /*private static InputStream inputStream = null;
-    private static SqlSession sqlSession = null;
-    private static UserMapper mapper = null;
-
-    static {
-        try {
-            inputStream = Resources.getResourceAsStream("SqlMapConfig.xml");
-//           读取核心配置文件
-            SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
-//            创建SqlSessionFactoryBuilder对象
-            SqlSessionFactory factory = builder.build(inputStream);
-//            SqlSessionFactoryBuilder对象获取SqlSessionFactory对象
-            sqlSession = factory.openSession();
-            mapper = sqlSession.getMapper(UserMapper.class);
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    private static void close() {
-        if (sqlSession != null) {
-            sqlSession.close();
-            try {
-                inputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }*/
-
     private InputStream is = null;
     private SqlSession session = null;
     private UserMapper mapper = null;
@@ -73,6 +42,11 @@ public class UserMapperTest {
         session.close();
         is.close();
     }
+
+    public void testSqlSession(){
+        session.selectList("com.haiping.mapper.UserMapper.findAll");
+    }
+
     @Test
     public void testFindPage() {
         List<User> result = mapper.findPage(0, 5);
@@ -84,6 +58,7 @@ public class UserMapperTest {
         List<User> result = mapper.findAll();
         result.forEach(System.out::println);
     }
+
     @Test
     public void testFindByCondition(){
         User user = new User();
@@ -91,6 +66,7 @@ public class UserMapperTest {
         List<User> byCondition = mapper.findByCondition(user);
         byCondition.forEach(System.out::println);
     }
+
     @Test
     public void testAdd(){
         User user = new User();
@@ -100,7 +76,6 @@ public class UserMapperTest {
         int i = mapper.addUser(user);
 //        提交事务
         session.commit();
-//        sqlSession.commit();
         System.out.println(i);
     }
 
