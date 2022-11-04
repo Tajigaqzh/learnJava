@@ -126,7 +126,7 @@ parameterType="string" resultType="com.haiping.pojo.User">
 |"|`&quot;`|
 --------------
 
-####动态SQL `<if>`
+#### 动态SQL `<if>`
 
 标签内的Sql片段在满足条件后才会添加，用法为： `<if test="条件">` 
 
@@ -144,7 +144,7 @@ parameterType="string" resultType="com.haiping.pojo.User">
     </where>
 </select>
 ```
-####动态SQL `<set>`
+#### 动态SQL `<set>`
 
 `<set>` 标签用在update语句中。借助 `<if>` ，可以只对有具体值的字段
 进行更新。 `<set>` 会自动添加set关键字，并去掉最后一个if语句中多
@@ -165,7 +165,7 @@ parameterType="string" resultType="com.haiping.pojo.User">
     </where>
 </update>
 ```
-####动态SQL `<choose>、<when>、<otherwise>`
+#### 动态SQL `<choose>、<when>、<otherwise>`多条件分支
 
 这些标签表示多条件分支，类似JAVA中的 switch...case 。 <choose> 类似switch ， <when> 类似 case ， <otherwise> 类似 default ，用法如下：
 ```xml
@@ -306,6 +306,7 @@ public interface UserMapper{
 </select>
 ```
 pojo传参
+
 自定义POJO类，该类的属性就是要传递的参数，在SQL语句中绑定
 参数时使用POJO的属性名作为参数名即可。此方式推荐使用。
 
