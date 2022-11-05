@@ -1,6 +1,8 @@
 # GIT
 选自CSDN文章，仅用于个人学习使用
 [原文链接地址](https://blog.csdn.net/qq_42363495/article/details/104878170)
+## 官网
+[点击链接跳转](https://git-scm.com/)
 ## 常用linux命令
 |linux命令|含义|
 |:---:|:---:|
