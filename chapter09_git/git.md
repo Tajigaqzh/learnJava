@@ -1,7 +1,7 @@
 # GIT
 选自CSDN文章，仅用于个人学习使用
 [原文链接地址](https://blog.csdn.net/qq_42363495/article/details/104878170)
-## linux命令
+## 常用linux命令
 |linux命令|含义|
 |:---:|:---:|
 |cd|切换目录|
@@ -151,7 +151,10 @@ git pull == git fetch + git merge
 
 
 ### submodule
-git submodule add <submodule_url> 添加
+```bash
+#添加submodule
+git submodule add <submodule_url>
+```
 ```bash
 # 删除submodule
 git submodule deinit project-sub-1
