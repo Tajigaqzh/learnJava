@@ -1,7 +1,10 @@
 # mybatis
 MyBatis是一个半自动的ORM框架，其本质是对JDBC的封装。使用 MyBatis不需要写JDBC代码，但需要程序员编写SQL语句
 ## 文档
-https://mybatis.net.cn/
+
+[官方文档，点击链接跳转](https://mybatis.org/mybatis-3/)
+
+[中文文档](https://mybatis.net.cn/)
 ## mybatis工作流程与使用的设计模式
 
 1.创建SqlSessionFactoryBuilder对象

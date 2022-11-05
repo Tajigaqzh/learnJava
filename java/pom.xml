@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hp</groupId>
+    <artifactId>java</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>01variable_datatype_controlstatement</module>
+        <module>02object</module>
+        <module>03array_set_map</module>
+        <module>05io</module>
+        <module>06muiti-thread</module>
+        <module>07reflect</module>
+        <module>08lambda</module>
+        <module>04class_abstractlass_interface</module>
+        <module>09datastructure</module>
+    </modules>
+
+</project>
