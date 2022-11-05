@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/chapter07_mybatisplus/pom.xml" />
         <option value="$PROJECT_DIR$/chapter08_springsecurity/pom.xml" />
         <option value="$PROJECT_DIR$/java/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter10_springtask_springquarter/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter08_springsecurity_shiro/pom.xml" />
       </list>
     </option>
   </component>

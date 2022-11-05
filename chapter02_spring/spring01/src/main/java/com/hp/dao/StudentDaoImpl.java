@@ -8,6 +8,7 @@ import com.hp.domain.Student;
  * @date 2022-11-04 20:22
  */
 public class StudentDaoImpl implements StudentDao{
+    private StudentDao dao;
 
     public StudentDaoImpl(){
         System.out.println("studentDaoImpl");
@@ -24,4 +25,11 @@ public class StudentDaoImpl implements StudentDao{
         return new Student(id,"张三","上海");
     }
 
+    public StudentDao getDao() {
+        return dao;
+    }
+
+    public void setDao(StudentDao dao) {
+        this.dao = dao;
+    }
 }

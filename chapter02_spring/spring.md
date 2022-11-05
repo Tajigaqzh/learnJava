@@ -132,8 +132,12 @@ public class TestContainer {
 
 ## DI依赖注入
 依赖注入（Dependency Injection，简称DI），它是Spring控制反转思想的具体实现
-- setter注入
-- 自动注入
+### 注入方式
+#### 构造方法注入
+#### setter注入
+#### 自动注入
+- 全局配置
+- 局部配置
 ### 依赖注入的类型
 - Bean
 - 基本数据类型
@@ -143,3 +147,55 @@ public class TestContainer {
 - Map
 - Properties
 
+## 注解实现IOC
+### @Component
+### @Repository、@Service、@Controller
+
+### @Scope
+### @Autowired
+### @Qualifier
+### @Value
+### @Configuration
+### @ComponentScan
+### @PropertySource
+### @Bean
+###@Import
+
+## spring整合mybatis
+
+## SpringAOP
+AOP的全称是Aspect Oriented Programming，即面向切面编程。
+是实现功能统一维护的一种技术，它将业务逻辑的各个部分进行隔
+离，使开发人员在编写业务逻辑时可以专心于核心业务，从而提高
+了开发效率。
+- 作用：在不修改源码的基础上，对已有方法进行增强。
+- 实现原理：动态代理技术。
+- 优势：减少重复代码、提高开发效率、维护方便
+- 应用场景：事务处理、日志管理、权限控制、异常处理等方面。
+### AOP相关术语
+|名称 |说明|
+|---|---|
+|JoinPoint（连接点）| 指能被拦截到的点，在Spring中只有方法能被拦截。|
+|Pointcut（切点）| 指要对哪些连接点进行拦截，即被增强的方法。|
+|Advice（通知）| 指拦截后要做的事情，即切点被拦截后执行的方法。|
+|Aspect（切面）| 切点+通知称为切面|
+|Target（目标）| 被代理的对象|
+|Proxy（代理）| 代理对象|
+|Weaving（织入）| 生成代理对象的过程|
+### AOP通知类型
+AOP有以下几种常用的通知类型
+
+|通知类型|描述|
+|:---:|:---|
+| 前置通知 | 在方法执行前添加功能         |
+| 后置通知 | 在方法正常执行后添加功能       |
+| 异常通知 | 在方法抛出异常后添加功能       |
+| 最终通知 | 无论方法是否抛出异常，都会执行该通知 |
+| 环绕通知 | 在方法执行前后添加功能        |
+### AOP切点表达式
+
+### 注解配置AOP
+#### @Aspect
+### SpringAOP_原生Spring实现AOP
+
+## Sprig事务

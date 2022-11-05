@@ -23,4 +23,13 @@
     <bean id="studentDao5" class="com.hp.dao.StudentDaoImpl2" scope="singleton"
           init-method="init" destroy-method="destroy"/>-->
 
+    <bean id="studentService" class="com.hp.service.impl.StudentServiceImpl">
+        <property name="studentDao" ref="studentDao"/>
+    </bean>
+
+    <bean id="studentService2" class="com.hp.service.impl.StudentServiceImpl2">
+        <constructor-arg name="studentDao" ref="studentDao"/>
+    </bean>
+
+
 </beans>

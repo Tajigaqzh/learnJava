@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/java/01variable_datatype_controlstatement/01variable_datatype.iml" filepath="$PROJECT_DIR$/java/01variable_datatype_controlstatement/01variable_datatype.iml" />
       <module fileurl="file://$PROJECT_DIR$/java/variable_datatype/01variable_datatype_controlstatement.iml" filepath="$PROJECT_DIR$/java/variable_datatype/01variable_datatype_controlstatement.iml" />
       <module fileurl="file://$PROJECT_DIR$/java/02object/02object.iml" filepath="$PROJECT_DIR$/java/02object/02object.iml" />
       <module fileurl="file://$PROJECT_DIR$/java/03array_set_map/03array_set_map.iml" filepath="$PROJECT_DIR$/java/03array_set_map/03array_set_map.iml" />
@@ -16,7 +17,8 @@
       <module fileurl="file://$PROJECT_DIR$/chapter03_springmvc/chapter03_springmvc.iml" filepath="$PROJECT_DIR$/chapter03_springmvc/chapter03_springmvc.iml" />
       <module fileurl="file://$PROJECT_DIR$/chapter06_springboot/chapter06_springboot.iml" filepath="$PROJECT_DIR$/chapter06_springboot/chapter06_springboot.iml" />
       <module fileurl="file://$PROJECT_DIR$/chapter07_mybatisplus/chapter07_mybatisplus.iml" filepath="$PROJECT_DIR$/chapter07_mybatisplus/chapter07_mybatisplus.iml" />
-      <module fileurl="file://$PROJECT_DIR$/chapter08_springsecurity/chapter08_springsecurity.iml" filepath="$PROJECT_DIR$/chapter08_springsecurity/chapter08_springsecurity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter08_springsecurity_shiro/chapter08_springsecurity_shiro.iml" filepath="$PROJECT_DIR$/chapter08_springsecurity_shiro/chapter08_springsecurity_shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter10_springtask_springquarter/chapter10_springtask_springquarter.iml" filepath="$PROJECT_DIR$/chapter10_springtask_springquarter/chapter10_springtask_springquarter.iml" />
       <module fileurl="file://$PROJECT_DIR$/java/java.iml" filepath="$PROJECT_DIR$/java/java.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/learnJava.iml" filepath="$PROJECT_DIR$/.idea/learnJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/chapter02_spring/spring01/spring01.iml" filepath="$PROJECT_DIR$/chapter02_spring/spring01/spring01.iml" />
