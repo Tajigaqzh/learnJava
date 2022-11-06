@@ -31,5 +31,70 @@
         <constructor-arg name="studentDao" ref="studentDao"/>
     </bean>
 
+    <bean id="student1" class="com.hp.domain.Student">
+        <property name="name" value="张三"/>
+        <property name="address" value="山西"/>
+        <property name="id" value="1"/>
+    </bean>
+    <bean id="studentService3" class="com.hp.service.impl.StudentServiceImpl3">
+        <property name="studentDao" ref="studentDao"/>
+        <property name="count" value="1"/>
+        <property name="name" value="张三"/>
+        <property name="names">
+            <list>
+                <value>北京</value>
+                <value>上海</value>
+                <value>广州</value>
+            </list>
+        </property>
+        <property name="students">
+            <list>
+                <bean class="com.hp.domain.Student">
+                    <property name="name" value="张三"/>
+                    <property name="address" value="山西"/>
+                    <property name="id" value="1"/>
+                </bean>
+                <bean class="com.hp.domain.Student">
+                    <property name="name" value="李四"/>
+                    <property name="address" value="山东"/>
+                    <property name="id" value="2"/>
+                </bean>
+            </list>
+        </property>
+        <property name="studentSet">
+            <set>
+                <bean class="com.hp.domain.Student">
+                    <property name="name" value="张三"/>
+                    <property name="address" value="山西"/>
+                    <property name="id" value="1"/>
+                </bean>
+                <bean class="com.hp.domain.Student">
+                    <property name="name" value="李四"/>
+                    <property name="address" value="山东"/>
+                    <property name="id" value="2"/>
+                </bean>
+            </set>
+        </property>
+        <property name="stringMap">
+            <map>
+                <entry key="s1" value="zzz"/>
+                <entry key="s2" value="ssss"/>
+            </map>
+        </property>
+        <property name="studentMap">
+            <map>
+                <entry key="aaa" value-ref="student1"/>
+                <entry key="bbb" value-ref="student1"/>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="config1">111111</prop>
+                <prop key="config2">222222</prop>
+            </props>
+        </property>
+    </bean>
+
 
 </beans>

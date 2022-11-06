@@ -1,12 +1,14 @@
 package com.hp.dao;
 
 import com.hp.domain.Student;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author tony
  * @version 1.0
  * @date 2022-11-04 20:07
  */
+@Repository
 public class StudentDaoImpl2 implements StudentDao {
     public StudentDaoImpl2() {
         System.out.println("创建了StudentDao!StudentDaoImpl2");

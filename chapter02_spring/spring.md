@@ -134,10 +134,63 @@ public class TestContainer {
 依赖注入（Dependency Injection，简称DI），它是Spring控制反转思想的具体实现
 ### 注入方式
 #### 构造方法注入
+```java
+public class StudentServiceImpl2 implements StudentService {
+    private StudentDao studentDao;
+
+    /**构造方法注入
+     * @param studentDao
+     */
+    public StudentServiceImpl2(StudentDao studentDao) {
+        this.studentDao = studentDao;
+    }
+}
+```
+```xml
+<bean id="studentService2" class="com.hp.service.impl.StudentServiceImpl2">
+        <constructor-arg name="studentDao" ref="studentDao"/>
+    </bean>
+```
 #### setter注入
+```java
+public class StudentServiceImpl implements StudentService {
+    private StudentDao studentDao;
+
+    /**
+     * setter注入
+     * @param studentDao
+     */
+    public void setStudentDao(StudentDao studentDao) {
+        this.studentDao = studentDao;
+    }
+    public StudentServiceImpl(StudentDao dao){
+        this.studentDao=dao;
+    }
+
+}
+```
+```xml
+<bean id="studentService" class="com.hp.service.impl.StudentServiceImpl">
+        <property name="studentDao" ref="studentDao"/>
+    </bean>
+```
 #### 自动注入
 - 全局配置
+  在 <beans> 中设置 default-autowire 属性可以定义所有bean对象的自动注入策略。
 - 局部配置
+  在 <bean> 中设置 autowire 属性可以定义当前bean对象的自动注入策略。
+- autowire的取值如下：
+
+no：不会进行自动注入。
+
+default：全局配置default相当于no，局部配置default表示使用全局配置
+
+byName：在Spring容器中查找id与属性名相同的bean，并进行注入。需要提供set方法。
+
+byType：在Spring容器中查找类型与属性类型相同的bean，并进行注入。需要提供set方法。
+
+constructor：在Spring容器中查找id与属性名相同的bean，并进行注入。需要提供构造方法。
+  
 ### 依赖注入的类型
 - Bean
 - 基本数据类型
@@ -146,11 +199,237 @@ public class TestContainer {
 - Set
 - Map
 - Properties
+```java
+public class StudentServiceImpl3 implements StudentService {
+    private StudentDao studentDao;
+    private String name;
+    private int count;
+    private List<String> names;
+    private List<Student> students;
+    private Set<Student> studentSet;
+    private Map<String,String> stringMap;
+    private Map<String,Student> studentMap;
+    private Properties properties;
 
+    public StudentDao getStudentDao() {
+        return studentDao;
+    }
+
+    public void setStudentDao(StudentDao studentDao) {
+        this.studentDao = studentDao;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public List<String> getNames() {
+        return names;
+    }
+
+    public void setNames(List<String> names) {
+        this.names = names;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+
+    public Set<Student> getStudentSet() {
+        return studentSet;
+    }
+
+    public void setStudentSet(Set<Student> studentSet) {
+        this.studentSet = studentSet;
+    }
+
+    public Map<String, String> getStringMap() {
+        return stringMap;
+    }
+
+    public void setStringMap(Map<String, String> stringMap) {
+        this.stringMap = stringMap;
+    }
+
+    public Map<String, Student> getStudentMap() {
+        return studentMap;
+    }
+
+    public void setStudentMap(Map<String, Student> studentMap) {
+        this.studentMap = studentMap;
+    }
+
+    public Properties getProperties() {
+        return properties;
+    }
+
+    public void setProperties(Properties properties) {
+        this.properties = properties;
+    }
+
+    @Override
+    public String toString() {
+        return "StudentServiceImpl3{" +
+                "studentDao=" + studentDao +
+                ", name='" + name + '\'' +
+                ", count=" + count +
+                ", names=" + names +
+                ", students=" + students +
+                ", studentSet=" + studentSet +
+                ", stringMap=" + stringMap +
+                ", studentMap=" + studentMap +
+                ", properties=" + properties +
+                '}';
+    }
+}
+```
+```java
+public class Student {
+    private int id;
+    private String name;
+    private String address;
+
+    public Student() {
+    }
+
+    public Student(int id, String name, String address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+}
+```
+```xml
+<beans>
+  <bean id="student1" class="com.hp.domain.Student">
+    <property name="name" value="张三"/>
+    <property name="address" value="山西"/>
+    <property name="id" value="1"/>
+  </bean>
+  <bean id="studentService3" class="com.hp.service.impl.StudentServiceImpl3">
+    <property name="studentDao" ref="studentDao"/>
+<!--    注入bean-->
+    <property name="count" value="1"/>
+<!--    注入基本类型-->
+    <property name="name" value="张三"/>
+<!--    注入String-->
+    <property name="names">
+      <list>
+        <value>北京</value>
+        <value>上海</value>
+        <value>广州</value>
+      </list>
+    </property>
+<!--    注入list-->
+    <property name="students">
+      <list>
+        <bean class="com.hp.domain.Student">
+          <property name="name" value="张三"/>
+          <property name="address" value="山西"/>
+          <property name="id" value="1"/>
+        </bean>
+        <bean class="com.hp.domain.Student">
+          <property name="name" value="李四"/>
+          <property name="address" value="山东"/>
+          <property name="id" value="2"/>
+        </bean>
+      </list>
+    </property>
+<!--    注入List<Student>-->
+    <property name="studentSet">
+      <set>
+        <bean class="com.hp.domain.Student">
+          <property name="name" value="张三"/>
+          <property name="address" value="山西"/>
+          <property name="id" value="1"/>
+        </bean>
+        <bean class="com.hp.domain.Student">
+          <property name="name" value="李四"/>
+          <property name="address" value="山东"/>
+          <property name="id" value="2"/>
+        </bean>
+      </set>
+    </property>
+<!--    注入Set<Student>-->
+    <property name="stringMap">
+      <map>
+        <entry key="s1" value="zzz"/>
+        <entry key="s2" value="ssss"/>
+      </map>
+    </property>
+    <!--注入Map<String,String>-->
+    <property name="studentMap">
+      <map>
+        <entry key="aaa" value-ref="student1"/>
+        <entry key="bbb" value-ref="student1"/>
+      </map>
+    </property>
+    <!--注入Map<String,Student>-->
+    <property name="properties">
+      <props>
+        <prop key="config1">111111</prop>
+        <prop key="config2">222222</prop>
+      </props>
+    </property>
+<!--    注入Properties-->
+  </bean>
+</beans>
+```
 ## 注解实现IOC
+不再详细介绍，可以看源码。
+注解真的是yyds
 ### @Component
+@Component 注解中的value属性值表示bean对象的id
 ### @Repository、@Service、@Controller
-
 ### @Scope
 ### @Autowired
 ### @Qualifier

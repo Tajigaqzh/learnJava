@@ -3,11 +3,13 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/chapter06_springboot/springboot01/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/chapter06_springboot/springboot01/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/chapter08_springsecurity_shiro/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/chapter08_springsecurity_shiro/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/chapter08_springsecurity_shiro/src/test/java" isTestSource="true" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

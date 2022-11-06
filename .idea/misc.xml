@@ -12,9 +12,12 @@
         <option value="$PROJECT_DIR$/java/pom.xml" />
         <option value="$PROJECT_DIR$/chapter10_springtask_springquarter/pom.xml" />
         <option value="$PROJECT_DIR$/chapter08_springsecurity_shiro/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter06_springboot/springboot01/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter006_springboot/pom.xml" />
       </list>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
   <component name="ProjectType">
     <option name="id" value="jpab" />
   </component>

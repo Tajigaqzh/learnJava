@@ -7,18 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="08lambda" />
-        <module name="chapter06_springboot" />
         <module name="01variable_datatype" />
         <module name="spring01" />
         <module name="03array_set_map" />
         <module name="chapter07_mybatisplus" />
         <module name="chapter01_mybatis" />
+        <module name="springboot01" />
         <module name="chapter03_springmvc" />
         <module name="02object" />
         <module name="07reflect" />
         <module name="01variable_datatype_controlstatement" />
         <module name="09datastructure" />
         <module name="04class_abstractlass_interface" />
+        <module name="boot01" />
         <module name="chapter10_springtask_springquarter" />
         <module name="05io" />
         <module name="chapter08_springsecurity_shiro" />
@@ -36,6 +37,8 @@
       <module name="07reflect" target="1.8" />
       <module name="08lambda" target="1.8" />
       <module name="09datastructure" target="1.8" />
+      <module name="boot01" target="1.8" />
+      <module name="chapter006_springboot" target="1.8" />
       <module name="chapter01_mybatis" target="8" />
       <module name="chapter02_spring" target="1.8" />
       <module name="chapter03_springmvc" target="1.8" />
@@ -45,6 +48,13 @@
       <module name="chapter10_springtask_springquarter" target="1.8" />
       <module name="java" target="1.8" />
       <module name="spring01" target="1.8" />
+      <module name="springboot01" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="boot01" options="-parameters" />
+      <module name="springboot01" options="-parameters" />
+    </option>
   </component>
 </project>
