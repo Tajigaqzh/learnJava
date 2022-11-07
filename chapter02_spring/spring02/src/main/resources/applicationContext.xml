@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://mybatis.org/schema/mybatis-spring
+       http://mybatis.org/schema/mybatis-spring.xsd">
+
     <context:component-scan base-package="com.haiping"/>
-    <!--    包扫描-->
+    <!--    spring包扫描-->
+
     <context:property-placeholder location="db.properties"/>
     <!--    读取配置文件 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
@@ -19,17 +27,31 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="SqlMapConfig.xml"/>
+        <property name="configLocation" value="mybatisConfig.xml"/>
     </bean>
     <!-- Spring创建封装过的SqlSessionFactory -->
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
+
+    <mybatis:scan base-package="com.haiping.dao"/>
     <!-- Spring创建封装过的SqlSession -->
 
-    <!-- 该对象可以自动扫描持久层接口，并为接口创建代理对象  -->
-    <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <!-- 配置扫描的接口包 -->
+    <!-- 该对象可以自动扫描持久层接口，并为接口创建代理对象 -->
+<!--    注解mapperScanner也可以实现-->
+    <!--<bean id="mapperScan" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        &lt;!&ndash; 配置扫描的接口包 &ndash;&gt;
         <property name="basePackage" value="com.haiping.dao"/>
-    </bean>
+    </bean>-->
+<!--    <mybatis:scan base-package="com.haiping.dao"/>-->
+
+    <!--扫描mapper的方式：
+    一、xml方式
+        1.application.xml中设置mapperScan的basePackage
+        2.mybatisConfig.xml中设置<mappers>，可以扫描一个包也可以单独一个一个配置
+        3.<mybatis:scan/>需要引入xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+     二、注解方式
+        在配置类上添加@MapperScan注解，并指定包路径-->
+
+
 </beans>

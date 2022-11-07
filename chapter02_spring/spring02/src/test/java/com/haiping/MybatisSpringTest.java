@@ -16,6 +16,7 @@ import java.util.List;
  * @version 1.0
  * @date 2022-11-07 15:12
  */
+
 @ContextConfiguration(locations = "classpath:applicationContext.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class MybatisSpringTest {
