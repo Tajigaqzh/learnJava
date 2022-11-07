@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class StudentDaoImpl2 implements StudentDao {
     public StudentDaoImpl2() {
-        System.out.println("创建了StudentDao!StudentDaoImpl2");
+        init();
     }
 
     /**
