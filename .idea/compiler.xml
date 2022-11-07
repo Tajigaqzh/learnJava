@@ -10,6 +10,7 @@
         <module name="01variable_datatype" />
         <module name="spring01" />
         <module name="03array_set_map" />
+        <module name="spring02" />
         <module name="chapter07_mybatisplus" />
         <module name="chapter01_mybatis" />
         <module name="springboot01" />
@@ -48,6 +49,7 @@
       <module name="chapter10_springtask_springquarter" target="1.8" />
       <module name="java" target="1.8" />
       <module name="spring01" target="1.8" />
+      <module name="spring02" target="1.8" />
       <module name="springboot01" target="1.8" />
     </bytecodeTargetLevel>
   </component>

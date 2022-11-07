@@ -5,7 +5,6 @@ import com.hp.dao.StudentDao;
 import com.hp.domain.Student;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import com.mysql.cj.jdbc.Driver;
 import java.sql.Connection;
 
 /**
@@ -32,7 +31,6 @@ public class ConfigTest {
 
 
     }
-
     @Test
     public void classTest2() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Class<?> aClass = Class.forName("com.hp.domain.Student");

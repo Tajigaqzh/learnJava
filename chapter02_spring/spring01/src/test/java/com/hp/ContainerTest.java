@@ -14,9 +14,10 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 public class ContainerTest {
     @Test
     public void getContainer(){
+        /*
         String pathString = "C:\\Users\\tony\\Desktop\\learnJava\\chapter02_spring\\spring01\\src\\main\\resources\\bean.xml";
-        FileSystemXmlApplicationContext fileSystemXmlApplicationContext = new FileSystemXmlApplicationContext(pathString);
-        System.out.println(fileSystemXmlApplicationContext);
+        FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext(pathString);
+        System.out.println(context);*/
 
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         StudentDao bean = context.getBean(StudentDao.class);
